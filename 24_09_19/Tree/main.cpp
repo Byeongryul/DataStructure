@@ -11,5 +11,12 @@ int main(int argc, char* argv[]){
     TreeNodeLink(n1, n2, n3);
 
     preorder(n2);
+    printf("\n");
+
+    inorder(n2);
+    printf("\n");
+
+    postorder(n2);
+    printf("\n");
     return 0;
 }
