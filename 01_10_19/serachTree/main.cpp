@@ -1,6 +1,10 @@
 #include "quiz.h"
 
 int main(int argc, char *argv[]){
+    if(!define_is_ok()){
+        return 0;
+    }
+
     srand((unsigned int)time(NULL));
     
     Node *root = NULL;

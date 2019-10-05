@@ -1,10 +1,19 @@
 #include "quiz.h"
 
-element num_rand(){
+bool define_is_ok(){
+    int range = NUM_RANGE_MAX - NUM_RANGE_MIN + 1;
+    if(MAX_INPUT <= range || MAX_INPUT >= MAX_OUTPUT){
+        return true;
+    }
+    printf("quiz.h의define을 수정해 주세요\n");
+    return false;
+}
+
+int num_rand(){
     int range = NUM_RANGE_MAX - NUM_RANGE_MIN + 1;
     return rand() % range + NUM_RANGE_MIN;
 }
-  
+
 Node* search_tree(Node *root, element data){// 존재여부 확인
     if(root == NULL) return NULL;// 없으면 NULL 출력
     else if(root->data == data) return root;// 있다면 그 노드를 출력
