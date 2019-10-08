@@ -6,19 +6,21 @@ int main(int argc, char *argv[]){
     }
 
     srand((unsigned int)time(NULL));
-    
+
     Node *root = NULL;
 
     for(int i = 0; i < MAX_INPUT; ++i){
         insert_tree(&root);
         print_tree(root);
     }
-    
+
     printf("지울 수 있는 기회는 %d번!\n", MAX_OUTPUT);
+    print_tree(root);
+
     for(int i = 0; i < MAX_OUTPUT; ++i){
         delete_tree(&root);
         print_tree(root);
     }
-    
+
     return 0;
 }
