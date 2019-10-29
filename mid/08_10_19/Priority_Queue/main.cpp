@@ -53,6 +53,7 @@ void downSwap(PQ *pq, int index1, int index2){
 void downSort(PQ* pq){
     int index = 1, big;
     while(index * 2 <= pq->index && (pq->data[index] < pq->data[index * 2] || pq->data[index] < pq->data[index * 2 + 1])){
+        index *= big;
         big = pq->data[index * 2] > pq->data[index * 2 + 1] ? index * 2 : index * 2 + 1;
         downSwap(pq, index, big);
         index *= big;
