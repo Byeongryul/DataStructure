@@ -1,0 +1,9 @@
+set nu
+syn on
+set ls=2
+set ts=2
+set sw=2
+set ruler
+set title
+set cindent
+set smartindent
