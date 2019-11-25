@@ -5,7 +5,6 @@
 #define MAX_DIS 100001
 
 int timer[MAX_V];
-int is_visit[MAX_V];
 
 int next[(MAX_V * MAX_V - MAX_V) / 2];
 int haveNext[MAX_V];

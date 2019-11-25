@@ -18,9 +18,14 @@ double BT, MT, QT, ST;
 
 void setArr(int size){
     srand((unsigned int)time(NULL));
-    printf("d");
+    
     for(int i = 0; i < size; ++i){
-        b[i] = m[i] = q[i] = s[i] = rand()%size;
+    	int n = rand()%size;
+    	b.push_back(n);
+    	m.push_back(n);
+    	q.push_back(n);
+    	s.push_back(n);
+        
     }
 }
 
@@ -112,15 +117,15 @@ int main(int argc, char* argv[]){
     scanf("%d", &size);
 
     setArr(size);
-
+	
     if(size <= 100){
-        printf("ÏÉùÏÑ±Ìïú Î∞∞Ïó¥\n");
+        printf("∑£¥˝ πËø≠ \n");
         for(int i = 0; i < size && i != 100; ++i){
             printf("%d ", b[i]);
         }
         printf("\n");
     }
-
+	
     gettimeofday(&startTime, NULL);
     BSort();
     gettimeofday(&endTime, NULL);
@@ -141,25 +146,27 @@ int main(int argc, char* argv[]){
     gettimeofday(&endTime, NULL);
     ST = setTime();
 
+	printf("Bubble: %f Merge: %f Quick: %f STL: %f\n", BT, MT, QT, ST);
     if(BT > QT){
-        printf("Bublle Sort: Quick Sort Î≥¥Îã§ %.1fÎ∞∞ Îπ†Î¶Ñ", BT / QT);
+        printf("Bubble Sort: Quick Sort ∞° %.0f ∫¸∏ß", BT / QT);
     }
     else{
-        printf("Bublle Sort: Quick Sort Î≥¥Îã§ %.1fÎ∞∞ ÎäêÎ¶Ñ", QT / BT);
+        printf("Bubble Sort: Quick Sort∞°  %.0f ¥¿∏≤", QT / BT);
     }
-
+	printf("\n");
     if(MT > QT){
-        printf("Bublle Sort: Merge Sort Î≥¥Îã§ %.1fÎ∞∞ Îπ†Î¶Ñ", MT / QT);
+        printf("Merge Sort: Quick Sort  ∞° %.0f ∫¸∏ß", MT / QT);
     }
     else{
-        printf("Bublle Sort: Merge Sort Î≥¥Îã§ %.1fÎ∞∞ ÎäêÎ¶Ñ", QT / MT);
+        printf("Merge Sort: Quick Sort∞°  %.0f ¥¿∏≤", QT / MT);
     }
-
+	printf("\n");
     if(ST > QT){
-        printf("Bublle Sort: Quick Sort Î≥¥Îã§ %.1fÎ∞∞ Îπ†Î¶Ñ", ST / QT);
+        printf("STL Sort: Quick Sort  ∞° %.0f ∫¸∏ß", ST / QT);
     }
     else{
-        printf("Bublle Sort: Quick Sort Î≥¥Îã§ %.1fÎ∞∞ ÎäêÎ¶Ñ", QT / ST);
+        printf("STL Sort: Quick Sort∞°  %.0f ¥¿∏≤", QT / ST);
     }
+    printf("\n");
     return 0;
 }
